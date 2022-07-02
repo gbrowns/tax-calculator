@@ -20,7 +20,7 @@
                     employees get a breakdown of their taxable income with all current rates 
                     and options to choose from either monthly or annual calculations.
                 </p>
-                <input type="button" value="Get started">
+                <input type="button" value="Get started" id="start">
             </div>
 
         </header>
@@ -42,7 +42,7 @@
                             <h5>Basic Salary:</h5>
                         </div>
                         <div class="right-r">
-                            <input type="text" name="salary" id="salary-input">
+                            <input type="text" name="salary" id="salary-input" value="0.0">
                         </div> .
                     </div>
                     
@@ -51,7 +51,7 @@
                             <h5>Benefits (Bonus,Allowance):</h5>
                         </div>
                         <div class="right-r">
-                            <input type="text" name="salary" id="benefits-input">
+                            <input type="text" name="salary" id="benefits-input" value="0.0">
                         </div> .
                     </div>
                     
@@ -80,8 +80,8 @@
                             <h5>Deduct NHIF:</h5>
                         </div>
                         <div class="right-r">
-                            <label for="yes"><input type="checkbox" name="yes" id="yes-nssf"> Yes</label>
-                            <label for="no"><input type="checkbox" name="no" id="no-nssf"> No</label>
+                            <label for="yes"><input type="checkbox" name="yes" id="yes-nhif"> Yes</label>
+                            <label for="no"><input type="checkbox" name="no" id="no-nhif"> No</label>
                         </div>
                     </div>
                     
@@ -210,13 +210,8 @@
             <h5>Copyright 2022 | Prepared with love by | <span>Brown</span> </h5>
         </footer>
 
-
-
-
-
     </div>
     
-
-    
+    <script src="./public/js/main.js"></script>
 </body>
 </html>

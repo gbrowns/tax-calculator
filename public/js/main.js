@@ -1,19 +1,25 @@
 (function() {
 
     //global variables
-    let salary = 220000;//document.querySelector("input .sal");
-    let calcBtn = document.querySelector(" input .sub");
-    let periodChecked = true; //(true-monthly false -yearly)document.querySelector("");
-    let deductNSSF = true; //(true - yes false - No)document.querySelector("");
-    let nssfRates = false; //(false - old rates200 | true - new rates)
-    //let deduct 
+    let getStarted = document.querySelector("#start");
+    let monthBox = document.querySelector("#month");
+    let yearBox = document.querySelector("#year");
+    let yesNSSF = document.querySelector("#yes-nssf");
+    let noNSSF = document.querySelector("#no-nssf");
+    let yesNHIF = document.querySelector("#yes-nhif");
+    let noNHIF = document.querySelector("#no-nhif");
+    let newRates = document.querySelector("#new-rates");
+    let oldRates = document.querySelector("#old-rates")
+    let benefitsInput = document.querySelector("benefits-input");
+    let salaryInput = document.querySelector("salary-input");
+    let calculateBtn = document.querySelector(".calc-btn");
     //events
     window.addEventListener('DOMContentLoaded', () => {
         console.log("Loaded js");
 
         //perform calculations when calculate button is clicked
-        calcBtn.addEventListener('click', () => {
-
+        calculateBtn.addEventListener('click', () => {
+            console.log("starting calculation")
             // set the input area blank
 
             //perform computations if input is givebn
@@ -32,13 +38,14 @@
     const getTotalTaxableIncome = () => {
         // gross income = basic salary + allowances + commisissions
         //total taxable income = gross income - all deduction
-        return parseInt(salary);
+        if (benefitsInput.value !== "" && salaryInput.value !== "") {
+            return parseInt(benefitsInput.value + salaryInput.value);
+        }
     }
 
     //deductible NSSF pension
     const getDeductibleNSSF = (isChecked, amount) => {
 
-        let salary = parseInt(amount);
         //old rates checked --deduct 200 flat rate
         //new rate 12% of total taxable Income and if greater than 18000 then deduct 2160 flat rate
         /*
