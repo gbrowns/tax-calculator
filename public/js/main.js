@@ -14,7 +14,7 @@
     let salaryInput = document.querySelector("#salary-input");
     let calculateBtn = document.querySelector(".calc-btn");
     let isChecked = true;
-    let periodChecked = true;
+    let periodChecked = false;
     //events
     window.addEventListener('DOMContentLoaded', () => {
         console.log("Loaded js");
