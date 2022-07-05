@@ -2,8 +2,8 @@
 
     //global variables
     let getStarted = document.querySelector("#start");
-    //let monthBox = document.getElementById("#month");
-    //let yearBox = document.getElementById("#year");
+    let monthBox = document.querySelector("#month");
+    let yearBox = document.querySelector("#year");
     let yesNSSF = document.querySelector("#yes-nssf");
     let noNSSF = document.querySelector("#no-nssf");
     let yesNHIF = document.querySelector("#yes-nhif");
@@ -21,15 +21,19 @@
         console.log("Loaded js");
         console.log(benefitsInput);
         console.log(salaryInput);
-        console.log(yesNSSF)
+        console.log(monthBox);
+        console.log(yearBox);
 
         //variables
-        let salary = 200000; //parseInt(salaryInput.value);
-        let benefits = 5000;//parseInt(benefitsInput.value);
-        let deduct_nssf = true;
-        let deduct_nhif = true;
+        let salary //= 100000//parseInt(salaryInput.value);
+        let benefits //= 5000//parseInt(benefitsInput.value);
+        let deduct_nssf //= true;
+        let deduct_nhif //= true;
         let monthly = true;
-        let isNewRates = true;
+        let isNewRates //= true;
+
+        //console.log(salary);
+        //console.log(benefits);
 
 
         /**
@@ -47,6 +51,71 @@
          * Net Pay
          */
 
+        //handle input change
+        document.querySelectorAll("input[type=text]").forEach((input, i) => {
+            console.log(input)
+            input.addEventListener('change', () => {
+                if (i === 0){
+                    salary = parseInt(input.value);
+                    console.log(salary)
+                }
+
+                if(i === 1){
+                    benefits = parseInt(input.value);
+                    console.log(benefits)
+                }
+            })
+        })
+        
+        //handler for checkboxes
+        yesNHIF.addEventListener('change', function(){
+            if(this.checked){
+                deduct_nhif = true;
+            }
+        })
+
+        noNHIF.addEventListener('change', function () {
+            if (this.checked) {
+                deduct_nhif = false;
+            }
+        })
+
+        yesNSSF.addEventListener('change', function () {
+            if (this.checked) {
+                deduct_nssf = true;
+            }
+        })
+
+        noNSSF.addEventListener('change', function () {
+            if (this.checked) {
+                deduct_nssf = false;
+            }
+        })
+
+        newRates.addEventListener('change', function () {
+            if (this.checked) {
+                isNewRates = true;
+            }
+        });
+
+        oldRates.addEventListener('change', function () {
+            if (this.checked) {
+                isNewRates = false;
+            }
+        });
+        
+        monthBox.addEventListener('change', function () {
+            if (this.checked) {
+                monthly = true;
+            }
+        });
+
+        yearBox.addEventListener('change', function () {
+            if (this.checked) {
+                monthly = false;
+            }
+        });
+
         //total income
         const totalIncome = () => {
             let total = 0;
@@ -57,7 +126,7 @@
                 }
             }
             document.querySelector(".val1").textContent = total;
-            console.log(`Total income: ${total}`); //dom output 1
+            //console.log(`Total income: ${total}`); //dom output 1
             return total;
         }
 
@@ -67,12 +136,12 @@
             if (deduct_nssf) { //true
                 //perform deduction operation
                 deduction += nssfDeduction();
-                console.log(`NSSF amount: ${deduction}`) //dom output 2
+                //console.log(`NSSF amount: ${deduction}`) //dom output 2
 
             } else {
                 //set NSSF deduction to zero
                 deduction = 0; //flag
-                console.log(`NSSF not deducted: ${deduction}`) //dom output 2
+                //console.log(`NSSF not deducted: ${deduction}`) //dom output 2
             }
 
             document.querySelector(".val2").textContent = deduction;
@@ -86,10 +155,11 @@
                 //perform deduction operation
                 deduction += nhifDeduction();
 
-                console.log(`NHIF amount: ${deduction}`) //dom output 11
+                //console.log(`NHIF amount: ${deduction}`) //dom output 11
             } else {
                 //set NSSF deduction to zero
-                console.log(`NHIF not deducted: ${deduction}`) //dom output 11
+                deduction = 0;
+                //console.log(`NHIF not deducted: ${deduction}`) //dom output 11
             }
 
             document.querySelector(".val11").textContent = deduction;
@@ -183,7 +253,7 @@
         const getBenefitsInKind = () => {
             if (benefits !== null && benefits > 0) {
                 document.querySelector(".val4").textContent = benefits;
-                console.log(`Benefits: ${benefits}`); //dom output 4
+                //console.log(`Benefits: ${benefits}`); //dom output 4
             } else {
                 document.querySelector(".val4").textContent = 0;
                 //set value of benefits = 0 //dom output 4
@@ -194,7 +264,7 @@
         const getTaxableIncome = () => {
             let taxableIncome = totalIncome() - deductNSSF();
             document.querySelector(".val5").textContent = taxableIncome;
-            console.log(`taxable Income: ${taxableIncome}`); // dom output 5
+            //console.log(`taxable Income: ${taxableIncome}`); // dom output 5
             return taxableIncome;
         }
 
@@ -232,10 +302,10 @@
 
             if (monthly) {
                 relief += 2400;
-                console.log(`Monthly relief: ${relief}`); //dom output 7
+                //console.log(`Monthly relief: ${relief}`); //dom output 7
             } else {
                 relief += 28800;
-                console.log(`Annual relief: ${relief}`); //dom output 7 
+                //console.log(`Annual relief: ${relief}`); //dom output 7 
             }
             document.querySelector(".val7").textContent = relief;
             return relief;
@@ -246,7 +316,7 @@
             //Tax on taxable income - personal relief
             let amount = getTaxOnTaxableIncome() - getPersonalRelief();
             document.querySelector(".val8").textContent = amount;
-            console.log(`Tax off Relief: ${amount}`) //dom output 8
+            //console.log(`Tax off Relief: ${amount}`) //dom output 8
             return amount;
         }
 
@@ -255,7 +325,7 @@
             //Tax on taxable income - personal relief
             let amount = getTaxOnTaxableIncome() - getPersonalRelief();
             document.querySelector(".val9").textContent = amount;
-            console.log(`PAYE: ${amount}`); //dom output 9
+            //console.log(`PAYE: ${amount}`); //dom output 9
             return amount;
         }
 
@@ -264,7 +334,7 @@
             //income before pension - NSSF pension
             let amount = totalIncome() - deductNSSF();
             document.querySelector(".val10").textContent = amount;
-            console.log(`Chargeable Income: ${amount}`); //dom output 10
+            //console.log(`Chargeable Income: ${amount}`); //dom output 10
             return amount;
         }
 
@@ -280,7 +350,7 @@
 
             let pay = totalAmount - (paye + nhif + relief + nssf);
             document.querySelector(".val12").textContent = pay;
-            console.log(`Net pay: ${pay}`); //dom output 12
+            ///console.log(`Net pay: ${pay}`); //dom output 12
             return pay;
         }
 
@@ -304,6 +374,8 @@
         //perform calculations when calculate button is clicked
         calculateBtn.addEventListener('click', () => {
             console.log("starting calculation")
+            console.log(salary)
+            console.log(benefits)
             //invoke calculate method
             calculate();
         });
