@@ -45,11 +45,16 @@
                             font-size: .8rem;
                         }
                     }
+                    .right-r{
+                        label{
+                            font-size: 1rem;
+                        }
+                    }
 
                 }
 
                 .calc-btn{
-                     width: 100%;
+                    width: 92% !important;
                     height: 50px;
                     margin: 1rem 0;
                     transform: translateX(0)
@@ -135,13 +140,21 @@
                         padding-right: 0;
                         h5{
                             font-size: .8rem;
+                            height: 5vh;
+                        }
+                    }
+                    .right-r{
+
+                        input[type="text"]{
+                            width: 100%;
+                            
                         }
                     }
 
                 }
 
                 .calc-btn{
-                     width: 100%;
+                    width: 90% !important;
                     height: 50px;
                     margin: 1rem 0;
                     transform: translateX(0)

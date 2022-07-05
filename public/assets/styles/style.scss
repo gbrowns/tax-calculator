@@ -104,7 +104,7 @@ main{
             position: relative;
             width: 60%;
             background-color: #fff;
-            box-shadow: 1px 1px 20px rgba(3, 3, 26, 0.116);
+            box-shadow: 1px 1px 20px rgba(3, 3, 26, 0.205);
             .row{
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
@@ -128,10 +128,12 @@ main{
                     input[type="text"]{
                         width: 200px;
                         height: 40px;
-                        border: 1.5px solid rgb(3, 3, 26);
+                        border: 1.5px solid rgba(3, 3, 26, 0.356);
                         border-radius: 10px;
                         outline: none;
                         font-size: 1.2rem;
+                        padding-left: 1rem;
+                        color: rgba(0, 0, 0, 0.658);
 
                     }
                     label{
@@ -174,7 +176,7 @@ main{
     
         form{
             position: relative;
-            border: 2px solid rgb(3, 3, 26);
+            border: 2px solid rgba(3, 3, 26, 0.582);
             width: 60%;
             .row{
                 position: relative;

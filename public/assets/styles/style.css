@@ -102,7 +102,7 @@ main .part1 form {
   position: relative;
   width: 60%;
   background-color: #fff;
-  box-shadow: 1px 1px 20px rgba(3, 3, 26, 0.116);
+  box-shadow: 1px 1px 20px rgba(3, 3, 26, 0.205);
 }
 main .part1 form .row {
   display: grid;
@@ -128,10 +128,12 @@ main .part1 form .row .right-r {
 main .part1 form .row .right-r input[type=text] {
   width: 200px;
   height: 40px;
-  border: 1.5px solid rgb(3, 3, 26);
+  border: 1.5px solid rgba(3, 3, 26, 0.356);
   border-radius: 10px;
   outline: none;
   font-size: 1.2rem;
+  padding-left: 1rem;
+  color: rgba(0, 0, 0, 0.658);
 }
 main .part1 form .row .right-r label {
   font-size: 1.2rem;
@@ -167,7 +169,7 @@ main .part2 {
 }
 main .part2 form {
   position: relative;
-  border: 2px solid rgb(3, 3, 26);
+  border: 2px solid rgba(3, 3, 26, 0.582);
   width: 60%;
 }
 main .part2 form .row {
@@ -258,8 +260,11 @@ footer h5 span {
   main .part1 form .row .left-row h5 {
     font-size: 0.8rem;
   }
+  main .part1 form .row .right-r label {
+    font-size: 1rem;
+  }
   main .part1 form .calc-btn {
-    width: 100%;
+    width: 92% !important;
     height: 50px;
     margin: 1rem 0;
     transform: translateX(0);
@@ -336,9 +341,13 @@ footer h5 span {
   }
   main .part1 form .row .left-row h5 {
     font-size: 0.8rem;
+    height: 5vh;
+  }
+  main .part1 form .row .right-r input[type=text] {
+    width: 100%;
   }
   main .part1 form .calc-btn {
-    width: 100%;
+    width: 90% !important;
     height: 50px;
     margin: 1rem 0;
     transform: translateX(0);
@@ -401,7 +410,6 @@ footer h5 span {
   }
   main .part1 form {
     width: 95%;
-    border: 1px solid;
     margin: 1rem 0;
   }
   main .part1 form .row {
@@ -411,10 +419,10 @@ footer h5 span {
     padding-right: 1rem;
   }
   main .part1 form .calc-btn {
-    width: 100%;
+    width: 95%;
     height: 60px;
-    margin: 1rem 0;
-    transform: translateX(10%);
+    margin: 1rem 1rem;
+    transform: translateX(0);
   }
   main .part2 form {
     width: 95%;
