@@ -4,6 +4,25 @@
     body, .banner{
         min-height: 100%;
     }
+    .info{
+        padding: 1.5rem ;
+        width: 90%;
+        transform: translateX(5%);
+
+        p{
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        a{
+            padding-top: .6rem;
+            font-size: 1.1rem;
+        }
+        i{
+            top: 3.4rem;
+            font-size: 1.3rem;
+        }
+
+    }
     
     header{
         display: flex;
@@ -100,6 +119,27 @@
 
     body, .banner{
         min-height: 100%;
+    }
+
+    .info{
+        padding: 1.4rem ;
+        width: 90%;
+        transform: translateX(5%);
+
+        p{
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        a{
+            padding-top: .6rem;
+            font-size: 1.1rem;
+        }
+        i{
+            top: 3.4rem;
+            right: 1.5rem;
+            font-size: 1.3rem;
+        }
+
     }
     
     header{

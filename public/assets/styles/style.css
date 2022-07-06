@@ -266,6 +266,24 @@ footer h5 span {
     min-height: 100%;
   }
 
+  .info {
+    padding: 1.5rem;
+    width: 90%;
+    transform: translateX(5%);
+  }
+  .info p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .info a {
+    padding-top: 0.6rem;
+    font-size: 1.1rem;
+  }
+  .info i {
+    top: 3.4rem;
+    font-size: 1.3rem;
+  }
+
   header {
     display: flex;
     justify-content: center;
@@ -346,6 +364,25 @@ footer h5 span {
 @media screen and (max-width: 375px) {
   body, .banner {
     min-height: 100%;
+  }
+
+  .info {
+    padding: 1.4rem;
+    width: 90%;
+    transform: translateX(5%);
+  }
+  .info p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .info a {
+    padding-top: 0.6rem;
+    font-size: 1.1rem;
+  }
+  .info i {
+    top: 3.4rem;
+    right: 1.5rem;
+    font-size: 1.3rem;
   }
 
   header {
@@ -429,6 +466,24 @@ footer h5 span {
 @media screen and (max-width: 768px) {
   body, .banner {
     min-height: 100%;
+  }
+
+  .info {
+    padding: 1.5rem;
+    width: 90%;
+    transform: translateX(5%);
+  }
+  .info p {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .info a {
+    padding-top: 0.6rem;
+    font-size: 1.2rem;
+  }
+  .info i {
+    top: 3rem;
+    font-size: 1.3rem;
   }
 
   header {

@@ -4,6 +4,25 @@
     body, .banner{
         min-height: 100%;
     }
+    .info{
+        padding: 1.5rem ;
+        width: 90%;
+        transform: translateX(5%);
+
+        p{
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        a{
+            padding-top: .6rem;
+            font-size: 1.2rem;
+        }
+        i{
+            top: 3rem;
+            font-size: 1.3rem;
+        }
+
+    }
     
     header{
         display: flex;
