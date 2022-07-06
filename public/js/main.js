@@ -380,6 +380,16 @@
             calculate();
         });
 
+
+        //event listener to the start button
+        getStarted.addEventListener('click', () => {
+            document.querySelector(".info").style.display = 'block';
+        });
+        //close alert box
+        document.getElementById("close").addEventListener('click', () => {
+            document.querySelector(".info").style.display = 'none';
+        });
+
     });
     
 })();

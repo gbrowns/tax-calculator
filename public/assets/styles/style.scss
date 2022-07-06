@@ -25,6 +25,50 @@ body, .banner{
     background-color: rgb(252, 252, 252);
 }
 
+.info{
+    display: none;
+    position: relative;
+    border: 1px solid rgba(11, 11, 73, 0.425);
+    padding: 2rem ;
+    width: 30%;
+    border-left: 10px solid;
+    transform: translateX(110%);
+    margin-top: 2rem;
+    border-radius: 6px;
+    transition: all 0.4s ease-in-out;
+    animation: disp ease-in-out .6s;
+
+    @keyframes disp{
+        from {
+             margin-top: -7rem;
+        }
+        to{
+             margin-top: 2rem;
+        }
+    }
+
+    p{
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: rgb(5, 5, 26);
+        margin-bottom: 1rem;
+    }
+    a{
+        padding-top: 1rem;
+        color: rgb(21, 81, 172);
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    i{
+        position: absolute;
+        right: 3rem;
+        top: 2.8rem;
+        font-size: 1.3rem;
+        cursor: pointer;
+    }
+
+}
+
 header{
     position: relative;
     display: grid;
