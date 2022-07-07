@@ -2,8 +2,8 @@
 
     //global variables
     let getStarted = document.querySelector("#start");
-    let monthBox = document.querySelector("#month");
-    let yearBox = document.querySelector("#year");
+    let monthCheck = document.querySelector("#month");
+    let yearCheck = document.querySelector("#year");
     let yesNSSF = document.querySelector("#yes-nssf");
     let noNSSF = document.querySelector("#no-nssf");
     let yesNHIF = document.querySelector("#yes-nhif");
@@ -21,8 +21,8 @@
         console.log("Loaded js");
         console.log(benefitsInput);
         console.log(salaryInput);
-        console.log(monthBox);
-        console.log(yearBox);
+        console.log(monthCheck);
+        console.log(yearCheck);
 
         //variables
         let salary //= 100000//parseInt(salaryInput.value);
@@ -104,13 +104,13 @@
             }
         });
         
-        monthBox.addEventListener('change', function () {
+        monthCheck.addEventListener('change', function () {
             if (this.checked) {
                 monthly = true;
             }
         });
 
-        yearBox.addEventListener('change', function () {
+        yearCheck.addEventListener('change', function () {
             if (this.checked) {
                 monthly = false;
             }
